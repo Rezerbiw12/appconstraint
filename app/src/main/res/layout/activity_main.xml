@@ -16,7 +16,7 @@
         android:hint="ป้อนค่าที่ต้องการ"
         android:inputType="number|numberDecimal"
         android:textColor="@android:color/holo_red_dark"
-        android:textColorHint="@color/colorAccent"
+        android:textColorHint="@color/cardview_light_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
