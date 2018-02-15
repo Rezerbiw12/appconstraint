@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         Button cmdCheck2 = (Button)findViewById(R.id.cmdCheck2);*/
         FloatingTextButton button1 = (FloatingTextButton) findViewById(R.id.button1);
         FloatingTextButton button2 = (FloatingTextButton)findViewById(R.id.button2);
+        FloatingTextButton button3 = (FloatingTextButton)findViewById(R.id.button3);
 
 
         button1.setOnClickListener(new View.OnClickListener() {
@@ -52,6 +53,13 @@ public class MainActivity extends AppCompatActivity {
                     i.putExtra("RESULT",String.valueOf(tempResult));
                     startActivity(i);
                 }
+            }
+        });
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),Formula.class);
+                startActivity(i);
             }
         });
     }
