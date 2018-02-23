@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ResultActivity" />
-        <activity android:name=".Formula"></activity>
+        <activity android:name=".Formula" />
+        <activity android:name=".CalculatorActivity"></activity>
     </application>
 
 </manifest>
