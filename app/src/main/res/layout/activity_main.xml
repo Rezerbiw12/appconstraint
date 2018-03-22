@@ -31,16 +31,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
         android:text="Copyright ©ส้มดอง กระบองคู่ 2018"
         android:textAllCaps="false"
         android:textColor="@android:color/background_light"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3"
-        app:layout_constraintVertical_bias="0.956" />
+        app:layout_constraintRight_toRightOf="parent" />
 
     <ru.dimorinny.floatingtextbutton.FloatingTextButton
         android:id="@+id/button1"
@@ -71,15 +68,30 @@
     <ru.dimorinny.floatingtextbutton.FloatingTextButton
         android:id="@+id/button3"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginTop="16dp"
         app:floating_background_color="@android:color/background_dark"
         app:floating_left_icon="@drawable/ic_star_black_24dp"
         app:floating_title="สูตรการคำนวณ"
         app:floating_title_color="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintVertical_bias="0.061">
+
+    </ru.dimorinny.floatingtextbutton.FloatingTextButton>
+
+    <Button
+        android:id="@+id/ques"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="136dp"
+        android:text="ตอบคำถาม"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

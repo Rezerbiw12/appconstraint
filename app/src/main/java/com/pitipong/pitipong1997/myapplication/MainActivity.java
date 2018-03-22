@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import ru.dimorinny.floatingtextbutton.FloatingTextButton;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         FloatingTextButton button1 = (FloatingTextButton) findViewById(R.id.button1);
         FloatingTextButton button2 = (FloatingTextButton)findViewById(R.id.button2);
         FloatingTextButton button3 = (FloatingTextButton)findViewById(R.id.button3);
+        Button ques = (Button)findViewById(R.id.ques);
 
 
         button1.setOnClickListener(new View.OnClickListener() {
@@ -62,5 +64,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        ques.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),question.class);
+                startActivity(i);
+            }
+        });
+
     }
 }

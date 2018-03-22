@@ -15,6 +15,6 @@ public class ResultActivity extends AppCompatActivity {
         String txtResultValue = result.getString("RESULT");
 
         TextView txtResult =(TextView)findViewById(R.id.textView3);
-        txtResult.setText(txtResultValue);
+        txtResult.setText(txtResultValue );
     }
 }
