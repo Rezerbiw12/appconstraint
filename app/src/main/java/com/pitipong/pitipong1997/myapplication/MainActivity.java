@@ -28,12 +28,11 @@ public class MainActivity extends AppCompatActivity {
 
 
         final EditText edtInput = (EditText) findViewById(R.id.edtInput);
-        /*Button cmdCheck1 = (Button) findViewById(R.id.cmdCheck1);
-        Button cmdCheck2 = (Button)findViewById(R.id.cmdCheck2);*/
         FloatingTextButton button1 = (FloatingTextButton) findViewById(R.id.button1);
         FloatingTextButton button2 = (FloatingTextButton)findViewById(R.id.button2);
         FloatingTextButton button3 = (FloatingTextButton)findViewById(R.id.button3);
         Button ques = (Button)findViewById(R.id.ques);
+        Button sevenday = (Button)findViewById(R.id.sevenday);
 
 
         button1.setOnClickListener(new View.OnClickListener() {
@@ -79,6 +78,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(getApplicationContext(),question.class);
+                startActivity(i);
+            }
+        });
+        sevenday.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),Main2Activity.class);
                 startActivity(i);
             }
         });

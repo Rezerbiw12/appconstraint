@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".ResultActivity" />
         <activity android:name=".Formula" />
-        <activity android:name=".question"></activity>
+        <activity android:name=".question" />
+        <activity android:name=".Main2Activity"></activity>
     </application>
 
 </manifest>

@@ -9,96 +9,113 @@
     tools:context="com.pitipong.pitipong1997.myapplication.MainActivity"
     tools:layout_editor_absoluteY="81dp">
 
-<android.support.constraint.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/edtInput"
-        android:layout_width="211dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:gravity="center"
-        android:hint="ป้อนค่าที่ต้องการ"
-        android:inputType="number|numberDecimal"
-        android:textColor="@android:color/holo_red_dark"
-        android:textColorHint="@color/cardview_light_background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <EditText
+            android:id="@+id/edtInput"
+            android:layout_width="211dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:gravity="center"
+            android:hint="ป้อนค่าที่ต้องการ"
+            android:inputType="number|numberDecimal"
+            android:textColor="@android:color/holo_red_dark"
+            android:textColorHint="@color/cardview_light_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="Copyright ©ส้มดอง กระบองคู่ 2018"
-        android:textAllCaps="false"
-        android:textColor="@android:color/background_light"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Copyright ©ส้มดอง กระบองคู่ 2018"
+            android:textAllCaps="false"
+            android:textColor="@android:color/background_light"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
 
-    <ru.dimorinny.floatingtextbutton.FloatingTextButton
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        app:floating_background_color="@android:color/darker_gray"
-        app:floating_left_icon="@drawable/ic_all_inclusive_black_24dp"
-        app:floating_title="Celsuis to Farenheit"
-        app:floating_title_color="@android:color/white"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtInput" />
+        <ru.dimorinny.floatingtextbutton.FloatingTextButton
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            app:floating_background_color="@android:color/darker_gray"
+            app:floating_left_icon="@drawable/ic_all_inclusive_black_24dp"
+            app:floating_title="Celsuis to Farenheit"
+            app:floating_title_color="@android:color/white"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtInput" />
 
-    <ru.dimorinny.floatingtextbutton.FloatingTextButton
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:floating_background_color="@android:color/darker_gray"
-        app:floating_left_icon="@drawable/ic_all_inclusive_black_24dp"
-        app:floating_title="Farenheit to Celsuis "
-        app:floating_title_color="@android:color/white"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button1" />
+        <ru.dimorinny.floatingtextbutton.FloatingTextButton
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:floating_background_color="@android:color/darker_gray"
+            app:floating_left_icon="@drawable/ic_all_inclusive_black_24dp"
+            app:floating_title="Farenheit to Celsuis "
+            app:floating_title_color="@android:color/white"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button1" />
 
-    <ru.dimorinny.floatingtextbutton.FloatingTextButton
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="16dp"
-        app:floating_background_color="@android:color/background_dark"
-        app:floating_left_icon="@drawable/ic_star_black_24dp"
-        app:floating_title="สูตรการคำนวณ"
-        app:floating_title_color="@android:color/white"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
-        app:layout_constraintVertical_bias="0.061">
+        <ru.dimorinny.floatingtextbutton.FloatingTextButton
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
+            app:floating_background_color="@android:color/background_dark"
+            app:floating_left_icon="@drawable/ic_star_black_24dp"
+            app:floating_title="สูตรการคำนวณ"
+            app:floating_title_color="@android:color/white"
+            app:layout_constraintBottom_toTopOf="@+id/button"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button2"
+            app:layout_constraintVertical_bias="0.061">
 
-    </ru.dimorinny.floatingtextbutton.FloatingTextButton>
+        </ru.dimorinny.floatingtextbutton.FloatingTextButton>
 
-    <Button
-        android:id="@+id/ques"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="136dp"
-        android:text="ตอบคำถาม"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
-</android.support.constraint.ConstraintLayout>
+        <Button
+            android:id="@+id/ques"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="ตอบคำถาม"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+        <Button
+            android:id="@+id/sevenday"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:text="7Day"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ques"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </android.support.constraint.ConstraintLayout>
 
     <android.support.design.widget.NavigationView
         app:headerLayout="@layout/header"
