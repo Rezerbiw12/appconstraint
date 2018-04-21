@@ -1,7 +1,16 @@
 package com.pitipong.pitipong1997.myapplication;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -33,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         FloatingTextButton button3 = (FloatingTextButton)findViewById(R.id.button3);
         Button ques = (Button)findViewById(R.id.ques);
         Button sevenday = (Button)findViewById(R.id.sevenday);
-
+        Button btn_show_notification = (Button)findViewById(R.id.btn_show_notification) ;
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,8 +98,32 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-    }
+        btn_show_notification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showNotification();
+            }
+        });
 
+    }
+    public void showNotification() {
+        Intent intent = new Intent(Intent.ACTION_VIEW,
+                Uri.parse("https://www.facebook.com/profile.php?id=100008357447266&ref=bookmarks"));
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+
+        Notification notification =
+                new NotificationCompat.Builder(this)
+                        .setSmallIcon(R.mipmap.ic_launcher)
+                        .setContentTitle("RezerBiw12")
+                        .setContentText("ทกสอบ Android Notification :)")
+                        .setAutoCancel(true)
+                        .setContentIntent(pendingIntent)
+                        .build();
+
+        NotificationManager notificationManager =
+                (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        notificationManager.notify(1000, notification);
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(mToggle.onOptionsItemSelected(item)){
