@@ -1,9 +1,11 @@
 package com.pitipong.pitipong1997.myapplication;
 
+import android.app.AlertDialog;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -18,6 +20,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import ru.dimorinny.floatingtextbutton.FloatingTextButton;
 
@@ -43,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         Button ques = (Button)findViewById(R.id.ques);
         Button sevenday = (Button)findViewById(R.id.sevenday);
         Button btn_show_notification = (Button)findViewById(R.id.btn_show_notification) ;
+        Button button_open_dialog = (Button)findViewById(R.id.button_open_dialog);
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,6 +80,23 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        button_open_dialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder =
+                        new AlertDialog.Builder(MainActivity.this);
+                builder.setMessage("ทดสอบการใช้ Dialog ?");
+                builder.setPositiveButton("ยืนยัน", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        Toast.makeText(getApplicationContext(),
+                                "ขอบคุณครับ", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                builder.setNegativeButton("ยกเลิก", null);
+                builder.create();
+                builder.show();
+            }
+        });
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,6 +127,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
     public void showNotification() {
         Intent intent = new Intent(Intent.ACTION_VIEW,
                 Uri.parse("https://www.facebook.com/profile.php?id=100008357447266&ref=bookmarks"));
@@ -115,7 +137,7 @@ public class MainActivity extends AppCompatActivity {
                 new NotificationCompat.Builder(this)
                         .setSmallIcon(R.mipmap.ic_launcher)
                         .setContentTitle("RezerBiw12")
-                        .setContentText("ทกสอบ Android Notification :)")
+                        .setContentText("ทดสอบ Android Notification :)")
                         .setAutoCancel(true)
                         .setContentIntent(pendingIntent)
                         .build();
