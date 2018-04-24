@@ -25,7 +25,7 @@ public class Formula extends AppCompatActivity {
                 if(chkBox1.isChecked() == true)
 
                 {
-                    ad.setMessage("ขอบคุณสำหรับการเยี่ยมชม");
+                    ad.setMessage("ทำการส่งข้อมูลยืนยันการสั่งไปยังลูกค้า");
                     ad.show();
                 }
                 else

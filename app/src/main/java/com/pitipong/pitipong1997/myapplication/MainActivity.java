@@ -39,16 +39,16 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        final EditText edtInput = (EditText) findViewById(R.id.edtInput);
+        /*final EditText edtInput = (EditText) findViewById(R.id.edtInput);*/
         FloatingTextButton button1 = (FloatingTextButton) findViewById(R.id.button1);
-        FloatingTextButton button2 = (FloatingTextButton)findViewById(R.id.button2);
+        /*FloatingTextButton button2 = (FloatingTextButton)findViewById(R.id.button2);*/
         FloatingTextButton button3 = (FloatingTextButton)findViewById(R.id.button3);
         Button ques = (Button)findViewById(R.id.ques);
         Button sevenday = (Button)findViewById(R.id.sevenday);
         Button btn_show_notification = (Button)findViewById(R.id.btn_show_notification) ;
         Button button_open_dialog = (Button)findViewById(R.id.button_open_dialog);
 
-        button1.setOnClickListener(new View.OnClickListener() {
+        /*button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (edtInput.getText().toString().trim().equals("")) {
@@ -79,20 +79,20 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(i);
                 }
             }
-        });
+        });*/
         button_open_dialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder =
                         new AlertDialog.Builder(MainActivity.this);
-                builder.setMessage("ทดสอบการใช้ Dialog ?");
-                builder.setPositiveButton("ยืนยัน", new DialogInterface.OnClickListener() {
+                builder.setMessage("แจ้งเตือนไปยังลูกค้าว่าวันนี้เปิดร้านหรือปิดร้าน");
+                builder.setPositiveButton("เปิดร้าน", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         Toast.makeText(getApplicationContext(),
-                                "ขอบคุณครับ", Toast.LENGTH_SHORT).show();
+                                "ทำการส่งการแจ้งเตือนเรียบร้อยแล้ว", Toast.LENGTH_SHORT).show();
                     }
                 });
-                builder.setNegativeButton("ยกเลิก", null);
+                builder.setNegativeButton("ปิดร้าน", null);
                 builder.create();
                 builder.show();
             }
@@ -136,8 +136,8 @@ public class MainActivity extends AppCompatActivity {
         Notification notification =
                 new NotificationCompat.Builder(this)
                         .setSmallIcon(R.mipmap.ic_launcher)
-                        .setContentTitle("RezerBiw12")
-                        .setContentText("ทดสอบ Android Notification :)")
+                        .setContentTitle("แจ้งเตือนจากร้านชาคอน")
+                        .setContentText("วันนี้ร้านเปิด")
                         .setAutoCancel(true)
                         .setContentIntent(pendingIntent)
                         .build();
