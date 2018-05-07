@@ -4,22 +4,17 @@ import android.app.AlertDialog;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import ru.dimorinny.floatingtextbutton.FloatingTextButton;
@@ -42,11 +37,12 @@ public class MainActivity extends AppCompatActivity {
         /*final EditText edtInput = (EditText) findViewById(R.id.edtInput);*/
         FloatingTextButton button1 = (FloatingTextButton) findViewById(R.id.button1);
         /*FloatingTextButton button2 = (FloatingTextButton)findViewById(R.id.button2);*/
-        FloatingTextButton button3 = (FloatingTextButton)findViewById(R.id.button3);
+        FloatingTextButton button3 = (FloatingTextButton)findViewById(R.id.facebookBtn);
         Button ques = (Button)findViewById(R.id.ques);
         Button sevenday = (Button)findViewById(R.id.sevenday);
         Button btn_show_notification = (Button)findViewById(R.id.btn_show_notification) ;
         Button button_open_dialog = (Button)findViewById(R.id.button_open_dialog);
+        Button btnlogin = (Button)findViewById(R.id.btnlogin);
 
         /*button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -120,17 +116,25 @@ public class MainActivity extends AppCompatActivity {
         });
 
         btn_show_notification.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                showNotification();
+            }
+            
+        });
+
+        btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showNotification();
+                Intent i = new Intent(getApplicationContext(),FacebookLogin.class);
+                startActivity(i);
             }
         });
 
     }
 
     public void showNotification() {
-        Intent intent = new Intent(Intent.ACTION_VIEW,
-                Uri.parse("https://www.facebook.com/profile.php?id=100008357447266&ref=bookmarks"));
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/profile.php?id=100008357447266&ref=bookmarks"));
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
 
         Notification notification =
@@ -141,7 +145,6 @@ public class MainActivity extends AppCompatActivity {
                         .setAutoCancel(true)
                         .setContentIntent(pendingIntent)
                         .build();
-
         NotificationManager notificationManager =
                 (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         notificationManager.notify(1000, notification);

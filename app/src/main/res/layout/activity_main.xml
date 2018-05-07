@@ -9,7 +9,7 @@
     tools:context="com.pitipong.pitipong1997.myapplication.MainActivity"
     tools:layout_editor_absoluteY="81dp">
 
-    <android.support.constraint.ConstraintLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -18,99 +18,86 @@
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="46dp"
-            android:layout_marginTop="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="42dp"
             android:text="ชาคอนออนไลน์"
             android:textColor="@android:color/holo_green_light"
             android:textSize="30sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textStyle="bold" />
 
         <ru.dimorinny.floatingtextbutton.FloatingTextButton
-            android:id="@+id/button3"
+            android:id="@+id/facebookBtn"
             android:layout_width="wrap_content"
             android:layout_height="45dp"
-            android:layout_marginEnd="108dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="114dp"
             app:floating_background_color="@android:color/background_dark"
             app:floating_left_icon="@drawable/ic_star_black_24dp"
             app:floating_title="รายการการสั่งซื้อ"
-            app:floating_title_color="@android:color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.901"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView5">
+            app:floating_title_color="@android:color/white">
 
         </ru.dimorinny.floatingtextbutton.FloatingTextButton>
 
         <Button
             android:id="@+id/ques"
             android:layout_width="wrap_content"
-            android:layout_height="49dp"
-            android:layout_marginTop="36dp"
-            android:text="ตอบคำถาม"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.501"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button3" />
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="115dp"
+            android:text="ตอบคำถาม" />
 
         <Button
             android:id="@+id/sevenday"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="เพิ่มเมนูใหม่"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.501"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ques" />
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="182dp"
+            android:text="เพิ่มเมนูใหม่" />
 
         <Button
             android:id="@+id/btn_show_notification"
             android:layout_width="wrap_content"
             android:layout_height="46dp"
+            android:layout_centerInParent="true"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="8dp"
-            android:text="Show notification"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.502"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sevenday" />
+            android:text="Show notification" />
 
         <Button
             android:id="@+id/button_open_dialog"
             android:layout_width="126dp"
             android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="175dp"
             android:background="#D74B4C"
-            android:text="เปิดร้าน/ปิดร้าน"
-            app:layout_constraintBottom_toTopOf="@+id/textView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_show_notification"
-            app:layout_constraintVertical_bias="0.136" />
+            android:text="เปิดร้าน/ปิดร้าน" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="226dp"
             android:layout_height="28dp"
-            android:layout_marginBottom="16dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
             android:text="Copyright ©ส้มดอง กระบองคู่ 2018"
             android:textAllCaps="false"
             android:textColor="@android:color/background_light"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:textStyle="bold" />
 
-    </android.support.constraint.ConstraintLayout>
+        <Button
+            android:id="@+id/btnlogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="49dp"
+            android:text="เข้าสู่ระบบ" />
+
+    </RelativeLayout>
 
     <android.support.design.widget.NavigationView
         app:headerLayout="@layout/header"

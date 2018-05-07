@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context=".AccountActivity">
+
+
+    <TextView
+        android:id="@+id/wellcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="33dp"
+        android:layout_centerInParent="true"
+        android:text="congreats! you are login"
+        android:textAlignment="textStart"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ru.dimorinny.floatingtextbutton.FloatingTextButton
+        android:id="@+id/logoutBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="159dp"
+        app:floating_background_color="@color/colorAccent"
+        app:floating_left_icon="@drawable/ic_account_box_black_24dp"
+        app:floating_title="Account logout"
+        app:floating_title_color="@android:color/white">
+    </ru.dimorinny.floatingtextbutton.FloatingTextButton>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="102dp"
+        android:layout_height="89dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="127dp"
+        app:srcCompat="@drawable/tick_image" />
+</RelativeLayout>

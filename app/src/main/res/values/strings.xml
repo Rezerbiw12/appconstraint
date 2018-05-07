@@ -2,4 +2,7 @@
     <string name="app_name">Admin ชาคอนออนไลน์</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="facebook_app_id">2018157775114621</string>
+    <string name="fb_login_protocol_scheme">fb2018157775114621</string>
+
 </resources>
