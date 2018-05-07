@@ -42,8 +42,6 @@ public class MainActivity extends AppCompatActivity {
         Button sevenday = (Button)findViewById(R.id.sevenday);
         Button btn_show_notification = (Button)findViewById(R.id.btn_show_notification) ;
         Button button_open_dialog = (Button)findViewById(R.id.button_open_dialog);
-        Button btnlogin = (Button)findViewById(R.id.btnlogin);
-
         /*button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -123,13 +121,6 @@ public class MainActivity extends AppCompatActivity {
             
         });
 
-        btnlogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(),FacebookLogin.class);
-                startActivity(i);
-            }
-        });
 
     }
 
