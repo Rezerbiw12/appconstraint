@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         /*final EditText edtInput = (EditText) findViewById(R.id.edtInput);*/
-        FloatingTextButton button1 = (FloatingTextButton) findViewById(R.id.button1);
+        //FloatingTextButton button1 = (FloatingTextButton) findViewById(R.id.button1);
         /*FloatingTextButton button2 = (FloatingTextButton)findViewById(R.id.button2);*/
         FloatingTextButton button3 = (FloatingTextButton)findViewById(R.id.facebookBtn);
         Button ques = (Button)findViewById(R.id.ques);

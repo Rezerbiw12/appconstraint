@@ -7,19 +7,14 @@
     android:background="@drawable/gradient"
     tools:context=".FacebookLogin">
 
-
-    <ru.dimorinny.floatingtextbutton.FloatingTextButton
-        android:id="@+id/facebookBtn"
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/loginBtn"
         android:layout_width="wrap_content"
-        android:layout_height="45dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="159dp"
-        app:floating_background_color="@color/colorPrimary"
-        app:floating_left_icon="@drawable/ic_account_box_black_24dp"
-        app:floating_title="Continue with facebook"
-        app:floating_title_color="@android:color/white">
-    </ru.dimorinny.floatingtextbutton.FloatingTextButton>
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="142dp" />
 
     <ImageView
         android:id="@+id/imageView"

@@ -21,18 +21,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ru.dimorinny.floatingtextbutton.FloatingTextButton
-        android:id="@+id/logoutBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="159dp"
-        app:floating_background_color="@color/colorAccent"
-        app:floating_left_icon="@drawable/ic_account_box_black_24dp"
-        app:floating_title="Account logout"
-        app:floating_title_color="@android:color/white">
-    </ru.dimorinny.floatingtextbutton.FloatingTextButton>
 
     <ImageView
         android:id="@+id/imageView3"

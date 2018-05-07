@@ -21,34 +21,5 @@ public class AccountActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
-        // Initialize Firebase Auth
-        mAuth = FirebaseAuth.getInstance();
-        mLogoutBtn = (Button)findViewById(R.id.logoutBtn);
-        getWindow().setStatusBarColor(Color.WHITE);
-        mLogoutBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mAuth.signOut();
-                LoginManager.getInstance().logOut();
-                updateUI();
-            }
-        });
-    }
-    @Override
-    public void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-
-        if(currentUser == null){
-            updateUI();
-        }
-    }
-
-    private void updateUI() {
-        Toast.makeText(AccountActivity.this,"You're logged out",Toast.LENGTH_LONG).show();
-        Intent i = new Intent(AccountActivity.this,FacebookLogin.class);
-        startActivity(i);
-        finish();
     }
 }

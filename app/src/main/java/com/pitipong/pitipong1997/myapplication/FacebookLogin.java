@@ -31,50 +31,43 @@ public class FacebookLogin extends AppCompatActivity {
     private CallbackManager mCallbackManager;
     private static final String TAG = "FACELOG";
     private FirebaseAuth mAuth;
-    private Button mFacebookBtn;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_facebook_login);
 
+        // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
+        // Initialize Facebook Login button
         mCallbackManager = CallbackManager.Factory.create();
-        mFacebookBtn = (Button) findViewById(R.id.facebookBtn);
-        mFacebookBtn.setOnClickListener(new View.OnClickListener() {
+        LoginButton loginButton =(LoginButton)findViewById(R.id.loginBtn);
+        loginButton.setReadPermissions("email", "public_profile");
+        loginButton.registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
             @Override
-            public void onClick(View v) {
-                mFacebookBtn.setEnabled(false);
-                LoginManager.getInstance().logInWithReadPermissions(FacebookLogin.this, Arrays.asList("email","public_profile"));
-                LoginManager.getInstance().registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
-                    @Override
-                    public void onSuccess(LoginResult loginResult) {
-                        Log.d(TAG, "facebook:onSuccess:" + loginResult);
-                        handleFacebookAccessToken(loginResult.getAccessToken());
-                    }
-                    @Override
-                    public void onCancel() {
-                        Log.d(TAG, "facebook:onCancel");
-                        // ...
-                    }
+            public void onSuccess(LoginResult loginResult) {
+                Log.d(TAG, "facebook:onSuccess:" + loginResult);
+                handleFacebookAccessToken(loginResult.getAccessToken());
+            }
 
-                    @Override
-                    public void onError(FacebookException error) {
-                        Log.d(TAG, "facebook:onError", error);
-                        // ...
-                    }
-                });
+            @Override
+            public void onCancel() {
+                Log.d(TAG, "facebook:onCancel");
+                // ...
+            }
+
+            @Override
+            public void onError(FacebookException error) {
+                Log.d(TAG, "facebook:onError", error);
+                // ...
             }
         });
     }
-
     @Override
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser != null) {
+        if(currentUser!=null){
             updateUI();
         }
 
@@ -86,6 +79,7 @@ public class FacebookLogin extends AppCompatActivity {
         startActivity(i);
         finish();
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -93,7 +87,6 @@ public class FacebookLogin extends AppCompatActivity {
         // Pass the activity result back to the Facebook SDK
         mCallbackManager.onActivityResult(requestCode, resultCode, data);
     }
-
     private void handleFacebookAccessToken(AccessToken token) {
         Log.d(TAG, "handleFacebookAccessToken:" + token);
 
@@ -106,14 +99,12 @@ public class FacebookLogin extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            mFacebookBtn.setEnabled(true);
                             updateUI();
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
                             Toast.makeText(FacebookLogin.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
-                            mFacebookBtn.setEnabled(true);
                             updateUI();
                         }
 
